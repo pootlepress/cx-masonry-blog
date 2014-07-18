@@ -226,7 +226,7 @@ class Pootlepress_Masonry_Blog {
 
 //                $css .= "#main > article { display: none; }\n";
                 $css .= "#main > .pagination { bottom: -10px; position: absolute; }\n";
-
+                $css .= "#main > .block { margin-bottom: 10px; }\n";
                 if ($this->columnCount == 2) {
                     $css .= "#main > .column-width { width: 45%; }\n";
                     $css .= "#main > .gutter-sizer { width: 10%; }\n";
