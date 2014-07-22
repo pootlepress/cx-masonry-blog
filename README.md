@@ -11,4 +11,6 @@ Instructions
 
 Versions
 
+v1.1 - ability to update within WordPress
+
 v1.0 - initial release
