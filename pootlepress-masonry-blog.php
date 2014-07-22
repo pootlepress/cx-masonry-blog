@@ -3,7 +3,7 @@
 Plugin Name: Canvas Extension - Masonry Blog
 Plugin URI: http://pootlepress.com/
 Description: An extension for WooThemes Canvas that allow you to use masonry effect in Magazine template.
-Version: 1.0.0
+Version: 1.1
 Author: PootlePress
 Author URI: http://pootlepress.com/
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ require_once( 'classes/class-pootlepress-masonry-blog.php' );
 require_once( 'classes/class-pootlepress-updater.php');
 
 $GLOBALS['pootlepress_masonry_blog'] = new Pootlepress_Masonry_Blog( __FILE__ );
-$GLOBALS['pootlepress_masonry_blog']->version = '1.0.0';
+$GLOBALS['pootlepress_masonry_blog']->version = '1.1';
 
 add_action('init', 'pp_mb_updater');
 function pp_mb_updater()
