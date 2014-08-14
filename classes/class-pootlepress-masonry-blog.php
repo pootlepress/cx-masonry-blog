@@ -116,6 +116,7 @@ class Pootlepress_Masonry_Blog {
             add_theme_support( 'infinite-scroll', array(
                 'container' => 'main',
                 'wrapper' => false,
+                'footer' => false,
                 'render' => 'pootlepress_masonry_blog_render'
             ) );
         }
