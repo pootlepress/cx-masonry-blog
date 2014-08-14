@@ -80,6 +80,8 @@ class Pootlepress_Masonry_Blog {
 
         add_filter( 'infinite_scroll_query_object', array(&$this, 'filter_infinite_scroll_query'));
 
+        add_filter('infinite_scroll_credit', '__return_empty_string');
+
         $this->masonryBlogEnabled = get_option('pootlepress-masonry-blog-enable', 'true') == 'true';
         $this->columnCount = (int)get_option('pootlepress-masonry-blog-column-count', '2');
 
