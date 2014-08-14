@@ -76,7 +76,7 @@ class Pootlepress_Masonry_Blog {
 
         add_action( 'init', array(&$this, 'init_infinite_scroll') , 10);
 
-        add_filter('infinite_scroll_archive_supported', array(&$this, 'filter_infinite_scroll_support'));
+        add_filter('infinite_scroll_archive_supported', array(&$this, 'filter_infinite_scroll_support'), 20);
 
         add_filter( 'infinite_scroll_query_object', array(&$this, 'filter_infinite_scroll_query'));
 
