@@ -11,6 +11,8 @@ Instructions
 
 Versions
 
+1.1.1 - fix infinite scroll
+
 v1.1 - ability to update within WordPress
 
 v1.0 - initial release
