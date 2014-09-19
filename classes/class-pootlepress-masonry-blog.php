@@ -114,7 +114,7 @@ class Pootlepress_Masonry_Blog {
         if ($this->masonryBlogEnabled && $this->infiniteScrollEnabled) {
             remove_theme_support('infinite-scroll');
             add_theme_support( 'infinite-scroll', array(
-                'container' => 'main',
+                'container' => 'masonry',
                 'wrapper' => false,
                 'footer' => false,
                 'render' => 'pootlepress_masonry_blog_render'
@@ -227,49 +227,49 @@ class Pootlepress_Masonry_Blog {
             $css = '';
             if ($this->masonryBlogEnabled) {
 
-//                $css .= "#main > article { display: none; }\n";
-                $css .= "#main > .pagination { bottom: -10px; position: absolute; }\n";
-                $css .= "#main > .block { margin-bottom: 10px; }\n";
+//                $css .= "#masonry > article { display: none; }\n";
+                $css .= "#masonry > .pagination { bottom: -10px; position: absolute; }\n";
+                $css .= "#masonry > .block { margin-bottom: 10px; }\n";
                 if ($this->columnCount == 2) {
-                    $css .= "#main > .column-width { width: 45%; }\n";
-                    $css .= "#main > .gutter-sizer { width: 10%; }\n";
-                    $css .= "#main > .block { width: 45%; }\n";
+                    $css .= "#masonry > .column-width { width: 45%; }\n";
+                    $css .= "#masonry > .gutter-sizer { width: 10%; }\n";
+                    $css .= "#masonry > .block { width: 45%; }\n";
                 } else if ($this->columnCount == 3) {
-                    $css .= "#main > .column-width { width: 30%; }\n";
-                    $css .= "#main > .gutter-sizer { width: 5%; }\n";
-                    $css .= "#main > .block { width: 30%; }\n";
+                    $css .= "#masonry > .column-width { width: 30%; }\n";
+                    $css .= "#masonry > .gutter-sizer { width: 5%; }\n";
+                    $css .= "#masonry > .block { width: 30%; }\n";
                 } else if ($this->columnCount == 4) {
-                    $css .= "#main > .column-width { width: 22.5%; }\n";
-                    $css .= "#main > .gutter-sizer { width: 3.33333333%; }\n";
-                    $css .= "#main > .block { width: 22.5%; }\n";
+                    $css .= "#masonry > .column-width { width: 22.5%; }\n";
+                    $css .= "#masonry > .gutter-sizer { width: 3.33333333%; }\n";
+                    $css .= "#masonry > .block { width: 22.5%; }\n";
                 }
 
                 if ($this->hidePostContent) {
-                    $css .= "#main > .block > article > .entry { display: none; }\n";
+                    $css .= "#masonry > .block > article > .entry { display: none; }\n";
                 }
 
                 if ($this->hidePostImage) {
-                    $css .= "#main > .block > article > a > .woo-image { display: none; }\n";
+                    $css .= "#masonry > .block > article > a > .woo-image { display: none; }\n";
                 }
 
                 if ($this->hidePostMeta) {
-                    $css .= "#main > .block > article > .post-meta { display: none; }\n";
+                    $css .= "#masonry > .block > article > .post-meta { display: none; }\n";
                 }
 
                 if ($this->infiniteScrollEnabled) {
-                    $css .= "#main > .pagination { display: none; }\n";
-                    $css .= "#main > .infinite-loader {\n";
+                    $css .= "#masonry > .pagination { display: none; }\n";
+                    $css .= "#masonry > .infinite-loader {\n";
                     $css .= "\t" . 'text-indent: 0 !important; position: absolute !important;' . "\n";
                     $css .= "\t" . 'left: 50% !important; bottom: 0 !important;' . "\n";
                     $css .= "}\n";
                 }
 
                 if ($this->hidePostTitle) {
-                    $css .= "#main > .block > article > header > .entry-title { display: none; }\n";
+                    $css .= "#masonry > .block > article > header > .entry-title { display: none; }\n";
                 }
 
                 if ($this->hideContinueReadingLink) {
-                    $css .= "#main > .block > article > .post-more > .read-more { display: none; }\n";
+                    $css .= "#masonry > .block > article > .post-more > .read-more { display: none; }\n";
                 }
             }
 
