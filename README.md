@@ -11,6 +11,8 @@ Instructions
 
 Versions
 
+1.1.2 - fix magazine slider appearing under posts
+
 1.1.1 - fix infinite scroll
 
 v1.1 - ability to update within WordPress
