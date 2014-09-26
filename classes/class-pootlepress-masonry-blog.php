@@ -70,7 +70,11 @@ class Pootlepress_Masonry_Blog {
 		// Load for a stylesheet for the selected style and load it.
         add_action( 'wp_enqueue_scripts', array( &$this, 'load_script' ) );
 
-        add_action('admin_print_scripts', array(&$this, 'load_admin_script'));
+        // the script is only to redirect link when WooTheme,
+        // only for old WooFramework
+        if (!class_exists('WF')) {
+            add_action('admin_print_scripts', array(&$this, 'load_admin_script'));
+        }
 
         add_action('wp_head', array(&$this, 'option_css'));
 
@@ -154,13 +158,25 @@ class Pootlepress_Masonry_Blog {
 				'name' => __( 'Masonry Blog', 'pootlepress-masonry-blog' ),
 				'type' => 'subheading'
 				);
-        $o[] = array(
-            'name' => 'Masonry Blog',
-            'desc' => '',
-            'id' => 'pootlepress-masonry-blog-notice',
-            'std' => 'Masonry Blog works with the Canvas Magazine template. Set options for the posts grid <a id="masonry-blog-link" href="javascript:void(0)">here</a>.',
-            'type' => 'info'
-        );
+
+        if (class_exists('WF')) {
+            $o[] = array(
+                'name' => 'Masonry Blog',
+                'desc' => '',
+                'id' => 'pootlepress-masonry-blog-notice',
+                'std' => 'Masonry Blog works with the Canvas Magazine template. Set options for the posts grid <a id="masonry-blog-link" href="?page=woothemes&tab=magazine-template">here</a>.',
+                'type' => 'info'
+            );
+        } else {
+            $o[] = array(
+                'name' => 'Masonry Blog',
+                'desc' => '',
+                'id' => 'pootlepress-masonry-blog-notice',
+                'std' => 'Masonry Blog works with the Canvas Magazine template. Set options for the posts grid <a id="masonry-blog-link" href="javascript:void(0)">here</a>.',
+                'type' => 'info'
+            );
+        }
+
         $o[] = array(
             'id' => 'pootlepress-masonry-blog-enable',
             'name' => __( 'Enable Masonry Blog', 'pootlepress-masonry-blog' ),
