@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require_once( 'pootlepress-masonry-blog-functions.php' );
 require_once( 'classes/class-pootlepress-masonry-blog.php' );
+require_once( 'classes/class-pootlepress-canvas-options.php' );
 require_once( 'classes/class-pootlepress-updater.php');
 
 $GLOBALS['pootlepress_masonry_blog'] = new Pootlepress_Masonry_Blog( __FILE__ );
