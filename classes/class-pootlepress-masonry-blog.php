@@ -93,7 +93,8 @@ class Pootlepress_Masonry_Blog {
         $this->hidePostMeta = get_option('pootlepress-masonry-blog-hide-meta', 'false') == 'true';
         $this->infiniteScrollEnabled = get_option('pootlepress-masonry-blog-infinite-scroll-enable', 'false') == 'true';
         $this->hidePostTitle = get_option('pootlepress-masonry-blog-hide-title', 'false') == 'true';
-        $this->hideContinueReadingLink = get_option('pootlepress-masonry-blog-hide-continue-reading', 'false') == 'true';
+		$this->hideContinueReadingLink = get_option('pootlepress-masonry-blog-hide-continue-reading', 'false') == 'true';
+		$this->hideCommentBalloon = get_option('pootlepress-masonry-blog-hide-comment-baloon', 'false') == 'true';
 
 	} // End __construct()
 
@@ -135,7 +136,7 @@ class Pootlepress_Masonry_Blog {
     }
 
     public function filter_infinite_scroll_query($query) {
-        if ($this->masonryBlogEnabled && $this->infiniteScrollEnabled &&
+        if ( $this->masonryBlogEnabled && $this->infiniteScrollEnabled &&
             is_page_template('template-magazine.php')) {
             $args = woo_get_magazine_query_args();
             $query = new WP_Query( $args );
@@ -232,13 +233,20 @@ class Pootlepress_Masonry_Blog {
             'std' => 'false',
             'type' => 'checkbox'
         );
-        $o[] = array(
-            'id' => 'pootlepress-masonry-blog-hide-continue-reading',
-            'name' => __( 'Do not display Continue Reading link', 'pootlepress-masonry-blog' ),
-            'desc' => __( 'Do not display Continue Reading link', 'pootlepress-masonry-blog' ),
-            'std' => 'false',
-            'type' => 'checkbox'
-        );
+		$o[] = array(
+			'id' => 'pootlepress-masonry-blog-hide-continue-reading',
+			'name' => __( 'Do not display Continue Reading link', 'pootlepress-masonry-blog' ),
+			'desc' => __( 'Do not display Continue Reading link', 'pootlepress-masonry-blog' ),
+			'std' => 'false',
+			'type' => 'checkbox'
+		);
+		$o[] = array(
+			'id' => 'pootlepress-masonry-blog-hide-comment-baloon',
+			'name' => __( 'Do not display comment baloon', 'pootlepress-masonry-blog' ),
+			'desc' => __( 'Do not display comment baloon', 'pootlepress-masonry-blog' ),
+			'std' => 'false',
+			'type' => 'checkbox'
+		);
 
 
         $afterName = 'Map Callout Text';
@@ -297,9 +305,13 @@ class Pootlepress_Masonry_Blog {
                     $css .= "#masonry > .block > article > header > .entry-title { display: none; }\n";
                 }
 
-                if ($this->hideContinueReadingLink) {
-                    $css .= "#masonry > .block > article > .post-more > .read-more { display: none; }\n";
-                }
+	            if ($this->hideContinueReadingLink) {
+		            $css .= "#masonry > .block > article > .post-more > .read-more { display: none; }\n";
+	            }
+
+	            if ($this->hideCommentBalloon) {
+		            $css .= "#masonry > .block > article > .post-more > .comments { display: none; }\n";
+	            }
             }
 
             echo "<style>".$css."</style>";
