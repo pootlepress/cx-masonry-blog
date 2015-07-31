@@ -15,21 +15,27 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 require_once( 'pootlepress-masonry-blog-functions.php' );
 require_once( 'classes/class-pootlepress-masonry-blog.php' );
 require_once( 'classes/class-pootlepress-canvas-options.php' );
-require_once( 'classes/class-pootlepress-updater.php');
 
 $GLOBALS['pootlepress_masonry_blog'] = new Pootlepress_Masonry_Blog( __FILE__ );
 $GLOBALS['pootlepress_masonry_blog']->version = '1.1.2';
 
-add_action('init', 'pp_mb_updater');
-function pp_mb_updater()
-{
-    if (!function_exists('get_plugin_data')) {
-        include(ABSPATH . 'wp-admin/includes/plugin.php');
-    }
-    $data = get_plugin_data(__FILE__);
-    $wptuts_plugin_current_version = $data['Version'];
-    $wptuts_plugin_remote_path = 'http://www.pootlepress.com/?updater=1';
-    $wptuts_plugin_slug = plugin_basename(__FILE__);
-    new Pootlepress_Updater ($wptuts_plugin_current_version, $wptuts_plugin_remote_path, $wptuts_plugin_slug);
-}
-?>
+//CX API
+require 'pp-cx/class-pp-cx-init.php';
+new PP_Canvas_Extensions_Init(
+	array(
+		'key'          => 'masonry-blog',
+		'label'        => 'Masonry Blog',
+		'url'          => 'http://www.pootlepress.com/shop/masonry-blog-for-woothemes-canvas/',
+		'description'  => "Allows you to style the standard Canvas mobile menu without complex CSS. What would take hours, now takes minutes.",
+		'img'          => 'http://www.pootlepress.com/wp-content/uploads/2014/01/masonry.png',
+		'installed'    => true,
+		'settings_url' => admin_url( 'admin.php?page=pp-extensions&cx=masonry-blog' ),
+	),
+	array(
+		//Tabs coming soon
+	),
+	'pp_cx_masonry_blog',
+	'Canvas Extension - Masonry Blog',
+	$GLOBALS['pootlepress_masonry_blog']->version,
+	__FILE__
+);

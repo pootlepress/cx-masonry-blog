@@ -1,0 +1,151 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+#cx-page-settings-page {
+    margin: 25px 0 0;
+
+}
+
+#cx-page-settings-page .cx-cards {
+    font-size: 0;
+    margin: -0.7%;
+}
+
+#cx-page-settings-page .cx-cards:after, #cx-page-settings-page .cx-card:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#cx-page-settings-page .cx-cards * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    vertical-align: middle;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin:0;
+}
+
+#cx-page-settings-page .cx-card-wrap{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.7%;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+#cx-page-settings-page .cx-card {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+#cx-page-settings-page .cx-card .deactivate {
+    display: none;
+}
+
+#cx-page-settings-page .cx-card .activate {
+    display: inline-block;
+}
+
+#cx-page-settings-page .cx-card.active .deactivate {
+    display: inline-block;
+}
+
+#cx-page-settings-page .cx-card.active .activate {
+    display: none;
+}
+
+#cx-page-settings-page .cx-img {
+    width: 140px;
+    padding: 10px;
+    float: left;
+    padding: 43px 8px;
+}
+
+#cx-page-settings-page .cx-details {
+    margin-left: 140px;
+    margin-right: 110px;
+    padding: 15px 0;
+}
+
+#cx-page-settings-page .cx-cards p.cx-description {
+    margin: 16px 0;
+}
+
+#cx-page-settings-page .cx-cards .cx-footer {
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+}
+
+#cx-page-settings-page .cx-cards .cx-footer:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#cx-page-settings-page .cx-cards .cx-footer > * {
+    padding: 0 7px;
+    font-size: 0.7em;
+    float: left;
+}
+
+#cx-page-settings-page .cx-cards .cx-wp-compat {
+    float: right;
+}
+
+#cx-page-settings-page .cx-controls {
+    width: 100px;
+    padding: 10px 10px 10px 0;
+    float: right;
+    text-align: right;
+}
+
+.button.pootle {
+    position: relative;
+    z-index: 10;
+    background: #ef4832;
+    border-color: #b32 !important;
+    color: #fff;
+    margin: 0 1px 5px 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25),0 1px 0 rgba(0,0,0,.25);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.52),0 1px 0 rgba(0,0,0,.25);
+}
+.button.pootle:hover {
+    background: #e04025;
+    color: #fff;
+}
+
+@media only screen and (max-width:782px) {
+    #cx-page-settings-page .cx-card-wrap {
+        width: 100%;
+        padding:1%;
+    }
+
+    #cx-page-settings-page .cx-cards {
+        margin: -1%;
+    }
+
+    #cx-page-settings-page .cx-controls {
+        width: auto;
+    }
+
+    #cx-page-settings-page .cx-details {
+        margin-left: 140px;
+        margin-right: 120px;
+        padding: 15px 0;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    #cx-page-settings-page .cx-card-wrap {
+        width: 33.33%;
+        padding:0.5%;
+    }
+
+    #cx-page-settings-page .cx-cards {
+        margin: 0;
+    }
+}
