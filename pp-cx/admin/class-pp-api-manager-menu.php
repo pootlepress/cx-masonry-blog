@@ -36,6 +36,10 @@ if ( ! class_exists( 'PootlePress_API_Manager_Menu' ) ) {
 			$settings_tabs[ $this->deactivation_tab_key ] = __( $this->menu_tab_deactivation_title, $this->text_domain );
 			$tab = $current_tab = filter_input( INPUT_GET, 'tab' );
 
+			if ( empty( $tab ) ) {
+				$tab = $this->activation_tab_key;
+			}
+
 			settings_errors();
 			?>
 			<div class='wrap'>
@@ -44,9 +48,12 @@ if ( ! class_exists( 'PootlePress_API_Manager_Menu' ) ) {
 				<ul class="subsubsub">
 					<?php
 					foreach ( $settings_tabs as $tab_page => $tab_name ) {
-						if ( empty( $tab ) ) { $tab = $tab_page; }
 						$active_tab = $tab == $tab_page ? 'current' : '';
-						echo '<li><a class="tab ' . $active_tab . '" href="?page=pp-extensions&cx=' . $this->cx_key . '&tab=' . $tab_page . '">' . $tab_name . '</a></li>';
+						if ( 0 !== strpos( $tab_page, '?' ) && 0 !== strpos( $tab_page, 'http://' ) ) {
+							echo '<li><a class="tab ' . $active_tab . '" href="?page=pp-extensions&cx=' . $this->cx_key . '&tab=' . $tab_page . '">' . $tab_name . '</a></li>';
+						} else {
+							echo '<li><a class="tab ' . $active_tab . '" href="' . $tab_page . '">' . $tab_name . '</a></li>';
+						}
 					}
 					?>
 				</ul>
