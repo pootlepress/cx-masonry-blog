@@ -7,14 +7,14 @@
 ini_set("log_errors", 1);
 ini_set("error_log", "/tmp/php-error.log");
 
-if ( ! class_exists( 'PootlePress_API_Manager' ) ) {
+if ( ! class_exists( 'PootlePress_CX_API_Manager' ) ) {
 	/**
 	 * Admin menu with the license key and license email form
-	 * class PootlePress_API_Manager_Menu
+	 * class PootlePress_CX_API_Manager_Menu
 	 */
 	require plugin_dir_path( __FILE__ ) . 'class-pp-api-manager-menu.php';
 
-	class PootlePress_API_Manager extends PootlePress_API_Manager_Menu {
+	class PootlePress_CX_API_Manager extends PootlePress_CX_API_Manager_Menu {
 
 		/** @var string Base URL to the remote upgrade API Manager server */
 		public $upgrade_url;
@@ -339,7 +339,7 @@ if ( ! class_exists( 'PootlePress_API_Manager' ) ) {
 				return;
 			} ?>
 			<div id="message" class="error">
-				<p><?php printf( __( $this->name . ' API License Key has not been activated, so the plugin is inactive! %sClick here%s to activate the license key and the plugin.', $this->text_domain ), '<a href="' . esc_url( admin_url( 'options-general.php?page=' . $this->token . '_dashboard' ) ) . '">', '</a>' ); ?></p>
+				<p><?php printf( __( 'Your ' . $this->name . ' License Key has not been activated, so you will miss out on important updates and support. %sClick here%s to activate the license key.', $this->text_domain ), '<a href="' . esc_url( admin_url( 'admin.php?page=pp-extensions&cx=' . $this->cx_key . '&tab=' . $this->token . '_dashboard' ) ) . '">', '</a>' ); ?></p>
 			</div>
 		<?php
 		}

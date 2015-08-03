@@ -32,7 +32,7 @@ new PP_Canvas_Extensions_Init(
 		'settings_url' => admin_url( 'admin.php?page=pp-extensions&cx=masonry-blog' ),
 	),
 	array(
-		'?page=woothemes&tab=masonry-blog' => 'General settings',
+		'?page=woothemes&tab=masonry-blog' => 'General Settings',
 	),
 	'pp_cx_masonry_blog',
 	'Canvas Extension - Masonry Blog',

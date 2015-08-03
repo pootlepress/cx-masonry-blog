@@ -59,7 +59,7 @@ if ( ! class_exists( 'PP_Canvas_Extensions_Init' ) ) {
 
 			//Pootlepress api integration
 			include 'admin/class-pp-api-manager.php';
-			new PootlePress_API_Manager( $cx_data['key'], $token, $name, $ver, $file, $domain, $upgrade_url );
+			new PootlePress_CX_API_Manager( $cx_data['key'], $token, $name, $ver, $file, $domain, $upgrade_url );
 
 		}
 

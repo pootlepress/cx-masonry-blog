@@ -9,8 +9,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'PootlePress_API_Manager_Menu' ) ) {
-	class PootlePress_API_Manager_Menu {
+if ( ! class_exists( 'PootlePress_CX_API_Manager_Menu' ) ) {
+	class PootlePress_CX_API_Manager_Menu {
 
 		// Load admin menu
 		public function __construct() {
