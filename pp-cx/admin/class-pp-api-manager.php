@@ -87,7 +87,7 @@ if ( ! class_exists( 'PootlePress_CX_API_Manager' ) ) {
 			/**
 			 * Displays an inactive message if the API License Key has not yet been activated
 			 */
-			if ( get_option( $this->token . '_activated' ) != 'Activated' ) {
+			if ( 'pp-extensions' == filter_input( INPUT_GET, 'page' ) && 'Activated' != get_option( $this->token . '_activated' ) ) {
 				add_action( 'admin_notices', array( $this, 'inactive_notice' ) );
 			}
 
