@@ -29,13 +29,7 @@ new PP_Canvas_Extensions_Init(
 		'description'  => "Allows you to style the standard Canvas mobile menu without complex CSS. What would take hours, now takes minutes.",
 		'img'          => 'http://www.pootlepress.com/wp-content/uploads/2014/01/masonry.png',
 		'installed'    => true,
-		'settings_url' => admin_url( 'admin.php?page=pp-extensions&cx=masonry-blog' ),
+		'settings_url' => admin_url( 'admin.php?page=woothemes&tab=masonry-blog' ),
 	),
-	array(
-		'?page=woothemes&tab=masonry-blog' => 'General Settings',
-	),
-	'pp_cx_masonry_blog',
-	'Canvas Extension - Masonry Blog',
-	$GLOBALS['pootlepress_masonry_blog']->version,
 	__FILE__
 );

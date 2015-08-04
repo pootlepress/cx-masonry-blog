@@ -100,7 +100,7 @@ if ( ! class_exists( 'PP_Canvas_Extensions_Page' ) ) {
 			<?php
 			if ( empty( $c_tab ) ) {
 				$extensions = $this->add_cx();
-				include plugin_dir_path( __FILE__ ) . '../admin/tpl-pp-canvas-extensions-page.php';
+				include 'tpl-pp-canvas-extensions-page.php';
 			}
 			do_action( 'pp_canvas_extensions_cx_page_' . $c_tab );
 			do_action( 'wf_screen_get_footer' );
